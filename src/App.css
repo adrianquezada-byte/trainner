@@ -1,0 +1,124 @@
+.entrenador-app {
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --primary: #0f172a;
+  --primary-hover: #1e293b;
+  --border: #e2e8f0;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  --color-protein: #ef4444;
+  --color-carbs: #f59e0b;
+  --color-fat: #3b82f6;
+
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg-page);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+.entrenador-app *, .entrenador-app *::before, .entrenador-app *::after { box-sizing: border-box; font-family: inherit; }
+.entrenador-app button:focus-visible,
+.entrenador-app input:focus-visible,
+.entrenador-app select:focus-visible,
+.entrenador-app textarea:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
+.entrenador-app .app-header { text-align: center; padding: 4rem 1rem 2.5rem; max-width: 800px; margin: 0 auto; }
+.entrenador-app .badge { display: inline-block; background: #fff; font-weight: 600; font-size: 0.8rem; padding: 0.4rem 1rem; border-radius: 999px; margin-bottom: 1rem; border: 1px solid var(--border); }
+.entrenador-app .app-header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -0.03em; margin: 0 0 1rem; }
+.entrenador-app .app-header p { font-size: 1.125rem; color: var(--text-muted); line-height: 1.6; margin: 0; }
+.entrenador-app .app-header .disclaimer { font-size: 0.85rem; margin-top: 1rem; }
+
+.entrenador-app .app-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+@media (max-width: 920px) {
+  .entrenador-app .app-container { grid-template-columns: 1fr; }
+  .entrenador-app .app-header h1 { font-size: 2.2rem; }
+}
+
+.entrenador-app .card { background: var(--bg-card); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-card); border: 1px solid var(--border); }
+.entrenador-app .section-title { display: flex; align-items: center; gap: 0.75rem; margin: 1.75rem 0 1rem; }
+.entrenador-app .section-title:first-child { margin-top: 0; }
+.entrenador-app .step-num { width: 24px; height: 24px; border-radius: 50%; background: var(--text-main); color: #fff; font-size: 0.75rem; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.entrenador-app .section-title h2 { font-size: 1.1rem; font-weight: 600; margin: 0; }
+
+.entrenador-app .segmented-control { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; background: var(--bg-page); padding: 0.35rem; border-radius: var(--radius-md); border: 1px solid var(--border); }
+.entrenador-app .segment-btn { border: none; background: transparent; padding: 0.6rem 0.4rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500; color: var(--text-muted); cursor: pointer; transition: all 0.2s; }
+.entrenador-app .segment-btn.active { background: #fff; color: var(--text-main); font-weight: 600; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); }
+
+.entrenador-app .sex-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.entrenador-app .sex-btn { padding: 0.75rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: #fff; font-weight: 500; color: var(--text-muted); cursor: pointer; }
+.entrenador-app .sex-btn.active { border-color: var(--text-main); color: var(--text-main); font-weight: 600; box-shadow: inset 0 0 0 1px var(--text-main); }
+
+.entrenador-app .input-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+.entrenador-app .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.entrenador-app .form-group label { font-size: 0.85rem; font-weight: 500; }
+.entrenador-app .form-group input,
+.entrenador-app .form-group select,
+.entrenador-app .form-group textarea { padding: 0.75rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border); background: #fff; font-size: 0.95rem; color: var(--text-main); resize: vertical; }
+
+.entrenador-app .chips-container { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.entrenador-app .chip { padding: 0.45rem 1rem; border-radius: 999px; border: 1px solid var(--border); background: #fff; color: var(--text-muted); font-size: 0.85rem; font-weight: 500; cursor: pointer; }
+.entrenador-app .chip:hover { border-color: var(--text-main); color: var(--text-main); }
+.entrenador-app .chip.active { background: var(--text-main); border-color: var(--text-main); color: #fff; }
+
+.entrenador-app .upload-zone { display: block; width: 100%; border: 2px dashed #cbd5e1; border-radius: var(--radius-md); padding: 2rem 1rem; text-align: center; cursor: pointer; background: var(--bg-page); color: inherit; }
+.entrenador-app .upload-zone:hover { border-color: var(--text-main); background: #f1f5f9; }
+.entrenador-app .upload-zone.required { border-color: #ef4444; background: #fef2f2; }
+.entrenador-app .upload-icon { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+.entrenador-app .upload-zone p { font-size: 0.9rem; font-weight: 600; margin: 0; }
+.entrenador-app .upload-zone small { font-size: 0.8rem; color: var(--text-muted); display: block; margin-top: 0.25rem; }
+.entrenador-app .preview-wrapper { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.entrenador-app .photo-preview { max-height: 180px; border-radius: var(--radius-md); object-fit: cover; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); }
+.entrenador-app .preview-actions { display: flex; align-items: center; gap: 1rem; }
+.entrenador-app .model-tag { font-size: 0.75rem; font-weight: 600; background: #e2e8f0; padding: 0.2rem 0.5rem; border-radius: 4px; }
+.entrenador-app .btn-remove-photo { background: transparent; color: #ef4444; border: none; font-size: 0.85rem; font-weight: 500; cursor: pointer; }
+.entrenador-app .btn-remove-photo:hover { text-decoration: underline; }
+
+.entrenador-app .form-error { margin-top: 1rem; padding: 0.75rem 1rem; border-radius: var(--radius-md); background: #fef2f2; color: #b91c1c; font-size: 0.9rem; }
+
+.entrenador-app .btn-gradient { width: 100%; margin-top: 1.5rem; padding: 1rem; border: none; border-radius: var(--radius-md); background: var(--primary); color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer; }
+.entrenador-app .btn-gradient:hover { background: var(--primary-hover); }
+.entrenador-app .btn-cancel { background: #b91c1c; }
+.entrenador-app .btn-cancel:hover { background: #991b1b; }
+
+.entrenador-app .results-column { display: flex; flex-direction: column; gap: 1.5rem; }
+.entrenador-app .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.entrenador-app .metric-card { padding: 1.5rem; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.5rem; position: relative; overflow: hidden; }
+.entrenador-app .metric-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+.entrenador-app .metric-card.calories::before { background: #0f172a; }
+.entrenador-app .metric-card.imc::before { background: #10b981; }
+.entrenador-app .metric-title { font-size: 0.8rem; font-weight: 600; color: var(--text-muted); }
+.entrenador-app .metric-number { font-size: 2.2rem; font-weight: 800; line-height: 1; display: flex; align-items: baseline; gap: 0.25rem; }
+.entrenador-app .metric-unit { font-size: 0.9rem; font-weight: 500; color: var(--text-muted); }
+.entrenador-app .metric-sub { font-size: 0.85rem; color: var(--text-muted); font-weight: 500; }
+
+.entrenador-app .warning-card { background: #fffbeb; border-color: #fcd34d; font-size: 0.9rem; padding: 1rem 1.25rem; }
+.entrenador-app .warning-card p { margin: 0.25rem 0; }
+
+.entrenador-app .macros-card h3 { font-size: 1rem; font-weight: 600; margin: 0 0 1.25rem; }
+.entrenador-app .macros-bars { display: flex; flex-direction: column; gap: 1.25rem; }
+.entrenador-app .macro-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.entrenador-app .macro-info { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; }
+.entrenador-app .macro-val { color: var(--text-muted); }
+.entrenador-app .progress-bg { width: 100%; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.entrenador-app .progress-fill { height: 100%; border-radius: 4px; transition: width 0.5s ease-out; }
+.entrenador-app .fill-protein { background: var(--color-protein); }
+.entrenador-app .fill-carbs { background: var(--color-carbs); }
+.entrenador-app .fill-fat { background: var(--color-fat); }
+
+.entrenador-app .tabs-header { display: flex; gap: 0.5rem; border-bottom: 1px solid var(--border); margin-bottom: 1.5rem; }
+.entrenador-app .tab-btn { padding: 0.75rem 1rem; border: none; background: transparent; font-weight: 600; font-size: 0.95rem; color: var(--text-muted); cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -1px; }
+.entrenador-app .tab-btn.active { color: var(--text-main); border-bottom-color: var(--text-main); }
+.entrenador-app .formatted-output { line-height: 1.7; font-size: 0.95rem; }
+.entrenador-app .formatted-output strong { font-weight: 600; display: block; margin-top: 1rem; margin-bottom: 0.25rem; }
+.entrenador-app .muted { color: var(--text-muted); }
+.entrenador-app .export-actions { display: flex; gap: 0.5rem; margin-top: 1.5rem; }
+
+.entrenador-app .empty-state { text-align: center; padding: 4rem 2rem; color: var(--text-muted); }
+.entrenador-app .empty-state span { font-size: 2rem; display: block; margin-bottom: 1rem; }
+
+.entrenador-app .api-key-box { padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+.entrenador-app .hint { font-size: 0.8rem; color: var(--text-muted); line-height: 1.4; }
+.entrenador-app .hint a { color: var(--text-main); }
